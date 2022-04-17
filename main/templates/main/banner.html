@@ -1,0 +1,178 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+
+                <div class="container-fluid page__container">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-10 pr-lg-0">
+
+                                <div class="page-section">
+                                    <h4>Create Advert</h4>
+                                    <div class="list-group list-group-form">
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Title</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="title"
+                                                           placeholder="Your ads title...">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Text</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="text"
+                                                           placeholder="Your ads text...">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Link</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                            name="link"
+                                                           placeholder="https://example.com">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Your Banner</label>
+                                                <div class="col-sm-9 media align-items-center">
+                                                   
+                                                    <div class="media-body">
+                                                        <div class="custom-file">
+                                                            <input type="file"
+                                                                    name="image"
+                                                                   class="custom-file-input"
+                                                                   id="inputGroupFile01">
+                                                            <label class="custom-file-label"
+                                                                   for="inputGroupFile01">Choose file</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Company</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="company_name"
+                                                           placeholder="company name ...">
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Interest</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="interest"
+                                                           placeholder="what are you into...">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Budget</label>
+                                                <div class="col-sm-9">
+                                                    <select id="custom-select" class="form-control custom-select" name="budget">
+                                                        <option selected>Open this select menu</option>
+                                                        <option value="5day - 350$">5days - 400USDT</option>
+                                                        <option value="9days - 500$">9days - 500USDT</option>
+                                                        <option value="15days - 800$">15days - 800USDT</option>
+                                                    </select>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox"
+                                                       class="custom-control-input"
+                                                       checked
+                                                       id="customCheck1">
+                                                <label class="custom-control-label"
+                                                       for="customCheck1">All Payment should be made with usdt or usdc to the address: </label>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">Hash</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="proof_of_payment"
+                                                           
+                                                           placeholder="transaction hash...">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="list-group-item">
+                                            <div class="form-group row align-items-center mb-0">
+                                                <label class="col-form-label form-label col-sm-3">About Project</label>
+                                                <div class="col-sm-9">
+                                                    <textarea rows="3"
+                                                            name="about_project"
+                                                            class="form-control"
+                                                            placeholder="About Project..."></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="page-nav__content float-right" style="position: float-right; margin-top: 5px;">
+                                            <button type="submit"
+                                                class="btn btn-accent">Save changes</button>
+                                            </div>
+                                        </div>
+
+
+
+                                        
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-2 page-nav">
+                                <div class="page-section pt-lg-112pt">
+                                    <nav class="nav page-nav__menu">
+                                        <a class="nav-link"
+                                           href="edit-account.html">Basic Information</a>
+                                        <a class="nav-link active"
+                                           href="edit-account-profile.html">Profile &amp; Privacy</a>
+                                        <a class="nav-link"
+                                           href="edit-account-notifications.html">Email Notifications</a>
+                                        <a class="nav-link"
+                                           href="edit-account-password.html">Change Password</a>
+                                    </nav>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+{% endblock %}

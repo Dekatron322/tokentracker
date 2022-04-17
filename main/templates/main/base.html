@@ -1,0 +1,600 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en"
+      dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible"
+              content="IE=edge">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Cronetworks | A Suite of tools on Cronos Blockchain</title>
+        <link rel="icon" href="https://cronetworks.com/static/assets/img/cronetworks.png">
+
+        <!-- Prevent the demo from appearing in search engines -->
+        <meta name="robots"
+              content="noindex">
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7COswald:300,400,500,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+              rel="stylesheet">
+
+        <!-- Perfect Scrollbar -->
+        <link type="text/css"
+              href="{% static 'assets/vendor/perfect-scrollbar.css' %}"
+              rel="stylesheet">
+
+        <!-- Material Design Icons -->
+        <link type="text/css"
+              href="{% static 'assets/css/material-icons.css' %}"
+              rel="stylesheet">
+
+        <!-- Font Awesome Icons -->
+        <link type="text/css"
+              href="{% static 'assets/css/fontawesome.css' %]"
+              rel="stylesheet">
+
+        <!-- Preloader -->
+        <link type="text/css"
+              href="{% static 'assets/vendor/spinkit.css' %}"
+              rel="stylesheet">
+        <link type="text/css"
+              href="{% static 'assets/css/preloader.css' %}"
+              rel="stylesheet">
+
+        <!-- App CSS -->
+        <link type="text/css"
+              href="{% static 'assets/css/app.css' %}"
+              rel="stylesheet">
+
+        <!-- Dark Mode CSS (optional) -->
+        <link type="text/css"
+              href="{% static 'assets/css/dark-mode.css' %}"
+              rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    </head>
+
+    <body class="layout-boxed layout-sticky-subnav ">
+
+        <div class="preloader">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+            </div>
+
+            <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+            <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+        </div>
+
+        <div class="mdk-drawer-layout js-mdk-drawer-layout"
+             data-push
+             data-responsive-width="992px">
+            <div class="mdk-drawer-layout__content page-content">
+
+                <!-- Header -->
+
+                <div class="navbar navbar-expand navbar-shadow px-0  pl-lg-16pt navbar-dark bg-dark"
+                     id="default-navbar"
+                     data-primary>
+
+                    <!-- Navbar toggler -->
+                    <button class="navbar-toggler d-block d-lg-none rounded-0"
+                            type="button"
+                            data-toggle="sidebar">
+                        <span class="material-icons">menu</span>
+                    </button>
+
+                    <!-- Navbar Brand -->
+                    <a href="{% url 'main:index' %}"
+                       class="mr-16pt ">
+                        <img 
+                             src="{% static 'assets/images/logo/cronetworks.png' %}"
+                             width="32px"
+                             alt="Cronetworks">
+                        
+                    </a>
+
+                    <!-- <button class="btn navbar-btn mr-16pt" data-toggle="modal" data-target="#apps">Apps <i class="material-icons">arrow_drop_down</i></button> -->
+
+                    <form class="search-form navbar-search d-none d-md-flex mr-16pt" method="post"
+                          action="/">
+                          {% csrf_token %}
+                        <button class="btn"
+                                type="submit"><i class="material-icons">search</i></button>
+                        <input type="text"
+                                name="query"
+                               class="form-control"
+                               placeholder="Search token...">
+                    </form>
+
+                    <div class="flex"></div>
+
+                    <div class="nav navbar-nav flex-nowrap d-none d-lg-flex mr-16pt"
+                         style="white-space: nowrap;">
+                        
+                    </div>
+
+                    <div class="nav navbar-nav flex-nowrap d-flex ml-0 mr-16pt">
+                        
+
+                        <!-- Notifications dropdown -->
+                        <div class="nav-item ml-16pt dropdown dropdown-notifications">
+                            <button class="nav-link btn-flush dropdown-toggle"
+                                    type="button"
+                                    data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll
+                                    data-caret="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="badge badge-notifications badge-accent">2</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar
+                                     class="position-relative">
+                                    <div class="dropdown-header"><strong>System notifications</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action unread">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">3 minutes ago</small>
+
+                                                <span class="ml-auto unread-indicator bg-accent"></span>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i class="material-icons font-size-16pt text-accent">account_circle</i>
+                                                    </span>
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+
+                                                    <span class="text-black-70">Your profile information has not been synced correctly.</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">5 hours ago</small>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i class="material-icons font-size-16pt text-primary">group_add</i>
+                                                    </span>
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+                                                    <strong class="text-black-100">Adrian. D</strong>
+                                                    <span class="text-black-70">Wants to join your private group.</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">1 day ago</small>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-light">
+                                                        <i class="material-icons font-size-16pt text-warning">storage</i>
+                                                    </span>
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+
+                                                    <span class="text-black-70">Your deploy was successful.</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // END Notifications dropdown -->
+
+                        <!-- Notifications dropdown -->
+                        <div class="nav-item ml-16pt dropdown dropdown-notifications">
+                            <button class="nav-link btn-flush dropdown-toggle"
+                                    type="button"
+                                    data-toggle="dropdown"
+                                    data-dropdown-disable-document-scroll
+                                    data-caret="false">
+                                <i class="material-icons icon-24pt">mail_outline</i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div data-perfect-scrollbar
+                                     class="position-relative">
+                                    <div class="dropdown-header"><strong>Messages</strong></div>
+                                    <div class="list-group list-group-flush mb-0">
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action unread">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">5 minutes ago</small>
+
+                                                <span class="ml-auto unread-indicator bg-accent"></span>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <img src="{% static 'assets/images/people/110/woman-5.jpg' %}"
+                                                         alt="people"
+                                                         class="avatar-img rounded-circle">
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+                                                    <strong class="text-black-100">Michelle</strong>
+                                                    <span class="text-black-70">Clients loved the new design.</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                        <a href="javascript:void(0);"
+                                           class="list-group-item list-group-item-action">
+                                            <span class="d-flex align-items-center mb-1">
+                                                <small class="text-black-50">5 minutes ago</small>
+
+                                            </span>
+                                            <span class="d-flex">
+                                                <span class="avatar avatar-xs mr-2">
+                                                    <img src="{% static 'assets/images/people/110/woman-5.jpg' %}"
+                                                         alt="people"
+                                                         class="avatar-img rounded-circle">
+                                                </span>
+                                                <span class="flex d-flex flex-column">
+                                                    <strong class="text-black-100">Michelle</strong>
+                                                    <span class="text-black-70">🔥 Superb job..</span>
+                                                </span>
+                                            </span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // END Notifications dropdown -->
+                    </div>
+
+                    <div class="dropdown border-left-2 navbar-border">
+                        <button class="navbar-toggler navbar-toggler-custom d-block"
+                                type="button"
+                                data-toggle="dropdown"
+                                data-caret="false">
+                            <span class="material-icons">business_center</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-header"><strong>Select company</strong></div>
+                            <a href=""
+                               class="dropdown-item active d-flex align-items-center">
+
+                                <div class="avatar avatar-sm mr-8pt">
+
+                                    <span class="avatar-title rounded bg-primary">FM</span>
+
+                                </div>
+
+                                <small class="ml-4pt flex">
+                                    <span class="d-flex flex-column">
+                                        <strong class="text-black-100">FrontendMatter Inc.</strong>
+                                        <span class="text-black-50">Administrator</span>
+                                    </span>
+                                </small>
+                            </a>
+                            <a href=""
+                               class="dropdown-item d-flex align-items-center">
+
+                                <div class="avatar avatar-sm mr-8pt">
+
+                                    <span class="avatar-title rounded bg-accent">HH</span>
+
+                                </div>
+
+                                <small class="ml-4pt flex">
+                                    <span class="d-flex flex-column">
+                                        <strong class="text-black-100">HumaHuma Inc.</strong>
+                                        <span class="text-black-50">Publisher</span>
+                                    </span>
+                                </small>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+{% block content %}
+
+{% endblock %}
+
+<div class="js-fix-footer footer border-top-2">
+                    <div class="container-fluid page__container page-section d-flex flex-column">
+                        <p class="text-70 brand mb-24pt">
+                            <img class="brand-icon"
+                                 src="{% static 'assets/images/logo/cronetworks.png' %}"
+                                 width="30"
+                                 alt="Cronetworks"> Cronetworks
+                        </p>
+                        <p class="text-muted mb-0 small">IMPORTANT DISCLAIMER: All content provided herein our website, hyperlinked sites, associated applications, forums, blogs, social media accounts and other platforms (“Site”) is for your general information only, procured from third party sources. We make no warranties of any kind in relation to our content, including but not limited to accuracy and updatedness. No part of the content that we provide constitutes financial advice, legal advice or any other form of advice meant for your specific reliance for any purpose. Any use or reliance on our content is solely at your own risk and discretion. You should conduct your own research, review, analyse and verify our content before relying on them. Trading is a highly risky activity that can lead to major losses, please therefore consult your financial advisor before making any decision. No content on our Site is meant to be a solicitation or offer..</p>
+                    </div>
+                    <div class="pb-16pt pb-lg-24pt">
+                        <div class="container-fluid page__container">
+                            <div class="bg-dark rounded page-section py-lg-32pt px-16pt px-lg-24pt">
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-4 mb-24pt mb-md-0">
+                                        <p class="text-white-70 mb-8pt"><strong>Follow us</strong></p>
+                                        <nav class="nav nav-links nav--flush">
+                                            <a href="#"
+                                               class="nav-link mr-8pt"><i class="bi bi-discord font-size-20pt" style="color: #00bcc2;"></i></a>
+                                            <a href="#"
+                                               class="nav-link mr-8pt"><i class="bi bi-twitter font-size-20pt" style="color: #00bcc2;"></i></a>
+                                            <a href="#"
+                                               class="nav-link mr-8pt"><i class="bi bi-telegram font-size-20pt" style="color: #00bcc2;"></i></a>
+                                            <!-- <a href="#" class="nav-link"><img src="assets/images/icon/footer/youtube-square@2x.png" width="24" height="24" alt="YouTube"></a> -->
+                                        </nav>
+                                    </div>
+                                    <div class="col-md-6 col-sm-4 mb-24pt mb-md-0 d-flex align-items-center">
+                                        <a href="mailto:info@cronetworks.com"
+                                           class="btn btn-outline-white">Contact <span class="icon--right material-icons">mail</span></a>
+                                    </div>
+                                    <div class="col-md-4 text-md-right">
+                                        <p class="mb-8pt d-flex align-items-md-center justify-content-md-end">
+                                            <a href=""
+                                               class="text-white-70 text-underline mr-16pt">Terms</a>
+                                            <a href=""
+                                               class="text-white-70 text-underline">Privacy policy</a>
+                                        </p>
+                                        <p class="text-white-50 small mb-0">Copyright 2022 &copy; All rights reserved.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END drawer-layout__content -->
+
+            <!-- drawer -->
+            <div class="mdk-drawer js-mdk-drawer"
+                 id="default-drawer">
+                <div class="mdk-drawer__content">
+                    <div class="sidebar sidebar-light sidebar-left"
+                         data-perfect-scrollbar>
+
+                        <a href="b{% url 'main:index' %}"
+                           class="sidebar-brand sidebar-brand-dark bg-dark">
+                            <img width="50px" 
+                                 src="{% static 'assets/images/logo/cronetworks.png' %}"
+                                 alt="Cronetworks">
+                            <span>CroNetworks</span>
+                        </a>
+
+                        <div class="sidebar-heading">Overview</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item active">
+                                <a class="sidebar-menu-button"
+                                   href="{% url 'main:index' %}">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">insert_chart_outlined</span>
+                                    <span class="sidebar-menu-text">Token Chart</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   
+                                   href="#">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">monetization_on</span>
+                                    Staking
+                                     <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">soon</span>
+                                    
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>
+                        </ul>
+
+                        <div class="sidebar-heading">Applications</div>
+                        <ul class="sidebar-menu">
+                           
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   
+                                   href="#">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_balance_wallet</span>
+                                    Launchpad
+                                    <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">soon</span>
+                                    <span class="sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>
+
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   
+                                   href="#">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_balance_wallet</span>
+                                    Wallet
+                                    <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">soon</span>
+                                    <span class="sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>
+
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   data-toggle="collapse"
+                                   href="#">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">palette</span>
+                                    Collectibles
+                                    <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">soon</span>
+                                    <span class="sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>
+                            <!--<li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   
+                                   href="{% url 'main:unvetted' %}">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">access_time</span>
+                                    List Token
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>
+                            
+                            
+                            
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   data-toggle="collapse"
+                                   href="#account_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
+                                    FAQs
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>-->
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   data-toggle="collapse"
+                                   href="#community_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">people_outline</span>
+                                    Community
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu collapse sm-indent"
+                                    id="community_menu">
+                                    
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="#">
+                                            <span class="sidebar-menu-text">Telegram</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="#">
+                                            <span class="sidebar-menu-text">Twiiter</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="mailto:hello@cronetworks.com">
+                                            <span class="sidebar-menu-text">Ask Question</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="sidebar-heading">More</div>
+                        <ul class="sidebar-menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   
+                                   href="{% url 'main:unvetted' %}">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">lock</span>
+                                    Liquidity locker
+                                    <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">soon</span>
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                
+                            </li>
+                            <!--
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button"
+                                   data-toggle="collapse"
+                                   href="#components_menu">
+                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">tune</span>
+                                    Advertise
+                                    <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                </a>
+                                <ul class="sidebar-submenu collapse sm-indent"
+                                    id="components_menu">
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="{% url 'main:banner' %}">
+                                            <span class="sidebar-menu-text">Banner</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           href="{% url 'main:unvetted' %}">
+                                            <span class="sidebar-menu-text">Token</span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>-->
+                            
+                            
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- // END drawer -->
+        </div>
+        <!-- // END drawer-layout -->
+
+        <!-- App Settings FAB -->
+        <div id="app-settings">
+            <app-settings layout-active="boxed"
+                          
+                          sidebar-type="dark"
+                          sidebar-variant="bg-body"></app-settings>
+        </div>
+        <!-- jQuery -->
+        <script type="text/javascript">
+  const copyBtns = [...document.getElementsByClassName('copy-btn')]
+  let previous = null
+
+  copyBtns.forEach(btn=> btn.addEventListener('click', ()=>{
+    const number = btn.getAttribute('data-hex')
+    navigator.clipboard.writeText(number)
+    btn.textContent = 'address copied'
+
+    if (previous) {
+      previous.textContent = 'address copied'
+    }
+    previous = btn
+  }))
+</script>
+        <script src="{% static 'assets/vendor/jquery.min.js' %}"></script>
+
+        <!-- Bootstrap -->
+        <script src="{% static 'assets/vendor/popper.min.js' %}"></script>
+        <script src="{% static 'assets/vendor/bootstrap.min.js' %}"></script>
+
+        <!-- Perfect Scrollbar -->
+        <script src="{% static 'assets/vendor/perfect-scrollbar.min.js' %}"></script>
+
+        <!-- DOM Factory -->
+        <script src="{% static 'assets/vendor/dom-factory.js' %}"></script>
+
+        <!-- MDK -->
+        <script src="{% static 'assets/vendor/material-design-kit.js' %}"></script>
+
+        <!-- App JS -->
+        <script src="{% static 'assets/js/app.js' %}"></script>
+
+        <!-- Highlight.js -->
+        <script src="{% static 'assets/js/hljs.js' %}"></script>
+
+        <!-- App Settings (safe to remove) -->
+        <script src="{% static 'assets/js/app-settings.js' %}"></script>
+    </body>
+
+</html>

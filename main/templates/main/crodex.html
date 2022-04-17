@@ -1,0 +1,432 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+                
+
+                <div class="container-fluid page__container">
+                    <div class="page-section">
+                    	<div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
+                    		{% for rs in data %}
+                            <div class="mb-24pt mb-sm-0 mr-sm-24pt">
+                           
+                                <p class="text-70 brand mb-10pt">
+                            <img class="brand-icon"
+                                 src="{{rs.image}}"
+                                 width="30"
+                                 alt="Huma"> {{ rs.name }} ({{rs.symbol }})
+                                 <h2 class="m-0">&dollar;{{ price }}</h2>
+                                 <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">{{ rs.atl}}</small>
+                                                            <small class="lh-24pt">{{ rs.ath}}</small>
+                                                        </p>
+                                                        <div class="progress"
+                                                             style="height: 4px;">
+                                                            <div class="progress-bar bg-accent"
+                                                                 role="progressbar"
+                                                                 style="width: {{ rs.ath|add:100 }}%;"
+                                                                 aria-valuenow="{{ rs.current_price }}"
+                                                                 aria-valuemin="0"
+                                                                 aria-valuemax="{{ rs.ath}}"></div>
+                                                        </div>
+                                                    </div>
+                        		</p>
+
+
+                                <ol class="breadcrumb p-0 m-0 mb-10pt">
+                                    <li class="breadcrumb-item"><button type="button"
+                                            class="btn btn-outline-success btn-sm">Rank: {{ rs.market_cap_rank }}</button></li>
+
+                                    <li class="breadcrumb-item active">
+
+                                        <button type="button"
+                                            class="btn btn-outline-success btn-sm">Coin</button>
+
+                                    </li>
+                                    <li class="breadcrumb-item active">
+
+                                        <button type="button"
+                                            class="btn btn-outline-success btn-sm">MCAP: ${{ market_cap|floatformat:2|intcomma }}</button>
+
+                                    </li>
+
+                                </ol>
+                                <br>
+
+                                <ol class="breadcrumb p-0 m-0">
+                                	<li class="breadcrumb-item active">
+
+                                        <div class="btn-group">
+
+                                        <a href="https://crodex.app/"
+                                                       class="btn btn-outline-success btn-sm"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">open_in_new</span> crodex.app</a>
+                                        
+                                    </div>
+
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                    <div class="btn-group">
+                                        <button type="button"
+                                                class="btn btn-outline-success dropdown-toggle btn-sm"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"><span class="material-icons sidebar-menu-icon">search</span>Explorers</button>
+                                        <div class="dropdown-menu">
+                                            
+                                             <a target="_blank" class="dropdown-item"
+                                               href="https://cronos.crypto.org/explorer/address/0xe243CCab9E66E6cF1215376980811ddf1eb7F689/transactions">crypto.org <i class="bi bi-box-arrow-up-right"></i></a>
+                                            
+                                        </div>
+                                    </div>
+                                	</li>
+
+                                    <li class="breadcrumb-item active">
+
+                                        <div class="btn-group">
+                                        <button type="button"
+                                                class="btn btn-outline-success dropdown-toggle btn-sm"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false"><span class="material-icons sidebar-menu-icon">perm_identity</span>Community</button>
+                                        <div class="dropdown-menu">
+                                            <a target="_blank" class="dropdown-item"
+                                               href="https://discord.com/invite/xSCzBRYGy4">discord.com <i class="bi bi-box-arrow-up-right"></i></a>
+                                            <a target="_blank" class="dropdown-item"
+                                               href="https://twitter.com/crodexapp">twitter.com <i class="bi bi-box-arrow-up-right"></i></a>
+                                            <a target="_blank" class="dropdown-item"
+                                               href="https://t.me/crodexofficial">telegram.com <i class="bi bi-box-arrow-up-right"></i></a>
+                                        </div>
+                                    </div>
+
+                                    </li>
+                                    
+
+                                    <li class="breadcrumb-item active">
+
+                                        <div class="btn-group">
+                                        <a  target="_blank" href="https://crodex.app/crodex_whitepaper.pdf"
+                                                class="btn btn-outline-success btn-sm"
+                                                ><span class="material-icons sidebar-menu-icon">description</span>Whitepaper</a>
+                                        
+                                    </div>
+
+                                    </li>
+
+                                </ol>
+
+
+                            </div>
+                            {% endfor %}
+
+                            
+
+                        </div>
+
+                        <br>
+                        <div class="row mb-lg-8pt">
+                            <div class="col-md-6">
+
+                                <div class="page-separator">
+                                    <div class="page-separator__text">Token Info</div>
+                                </div>
+
+                                
+
+                                        <div class="card mb-md-0">
+                                            {% for rs in data %}
+                                        <div class="row no-gutters flex"
+                                             role="tablist">
+                                            <div class="col-auto">
+                                                <div class="p-card-header d-flex align-items-center">
+                                                    <div class="h2 mb-0 mr-3" style="color:#8dc647">{{ rs.high_24h|floatformat:4|intcomma}}</div>
+                                                    <div class="flex">
+                                                        <p class="mb-0"><strong>24Hours</strong></p>
+                                                        <p class="text-50 mb-0 d-flex align-items-center">
+                                                            <small>High</small>
+                                                            <!-- <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i> -->
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto border-left">
+                                                <div class="p-card-header d-flex align-items-center">
+                                                    <div class="h2 mb-0 mr-3" style="color:#e15241">{{ rs.low_24h|floatformat:4|intcomma}}</div>
+                                                    <div class="flex">
+                                                        <p class="mb-0"><strong>24Hours</strong></p>
+                                                        <p class="text-50 mb-0 d-flex align-items-center">
+                                                            <small>Low</small>
+                                                            <!-- <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i> -->
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        {% endfor %}
+
+                                            <div class="card-body">
+                                            	{% for rs in data %}
+                                                <div class="text-50 mb-16pt">
+                                                
+                                                    <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Market Cap</small>
+                                                            <small class="lh-24pt">${{ rs.market_cap|floatformat:2|intcomma }}</small>
+                                                        </p>
+                                                        
+                                                    </div>
+
+                                                    <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Total Supply</small>
+                                                            <small class="lh-24pt">{{rs.total_supply|floatformat:2|intcomma}}</small>
+                                                        </p>
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Circulating Supply</small>
+                                                            <small class="lh-24pt">{{rs.circulating_supply|floatformat:2|intcomma}}</small>
+                                                        </p>
+                                                        
+                                                    </div>
+                                                    
+
+                                                    <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">24hours Volume</small>
+                                                            <small class="lh-24pt">${{ hr_vol|floatformat:2|intcomma }}</small>
+                                                        </p>
+                                                       
+                                                    </div>
+                                                    
+
+                                                    <div>
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Price change percentage(24hr)</small>
+                                                            <small class="lh-24pt">{{ hr_chg|floatformat:2|intcomma }}%</small>
+                                                        </p>
+                                                    </div>
+
+                                                     <div>
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">All Time High</small>
+                                                            <small class="lh-24pt">{{ rs.ath }} <span style="color:#e15241"> {{rs.ath_change_percentage|floatformat:2|intcomma}}%</span></small>
+                                                        </p>
+                                                    </div>
+
+                                                     <div>
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">All Time High</small>
+                                                            <small class="lh-24pt">{{ rs.atl }} <span style="color:#8dc647"> {{rs.atl_change_percentage|floatformat:2|intcomma}}%</span></small>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                {% endfor %}
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    
+
+                            
+
+
+                            <div class="col-md-6">
+
+                                <div class="page-separator">
+                                    <div class="page-separator__text">Links</div>
+                                </div>
+
+                                
+
+                                        <div class="card mb-md-0">
+                                            
+
+                                            <div class="card-body">
+                                            	{% for rs in data %}
+                                                <div class="text-50 mb-16pt">
+                                                	<div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Explorers</small>
+                                                            <small class="lh-24pt" ><a target="_blank" href="hhttps://cronos.crypto.org/explorer/address/0xe243CCab9E66E6cF1215376980811ddf1eb7F689/transactions"
+                                                       class="btn btn-secondary btn-sm"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">open_in_new</span> crypto.org</a></small>
+                                                        </p>
+                                                        
+                                                    </div>
+                                                
+                                                    <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Website</small>
+                                                            <small class="lh-24pt"><a target="_blank" href="https://crodex.app/"
+                                                       class="btn btn-secondary btn-sm"><span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">open_in_new</span> crodex.app</a>
+
+                                                       
+                                                       <br>
+
+                                                       
+                                                   </small>
+                                                        </p>
+                                                        
+                                                    </div>
+
+                                                    
+
+                                                    
+                                                    
+                                                    
+                                                    
+
+                                                    <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Community</small>
+                                                            <small class="lh-24pt"><a target="_blank" href="https://twitter.com/crodexapp"
+                                                       class="btn btn-secondary btn-sm"><i class="bi bi-twitter sidebar-menu-icon--left"> </i> Twitter</a>
+                                                   </small>
+                                               </p>
+                                           </div>
+                                           <div class="mb-4pt">
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt"></small>
+                                                            <small class="lh-24pt">
+                                                       <a href="https://discord.com/invite/xSCzBRYGy4"
+                                                       class="btn btn-secondary btn-sm"><i class="bi bi-discord sidebar-menu-icon--left"> </i> Discord</a>
+                                                       
+                                                       
+                                                       
+                                                   </small>
+                                                        </p>
+                                                       
+                                                    </div>
+                                                    
+
+                                                    
+
+                                                     <div>
+                                                        <p class="d-flex align-items-center mb-1">
+                                                            <small class="flex lh-24pt"></small>
+                                                            <small class="lh-24pt"><a target="_blank" href="https://t.me/crodexofficial"
+                                                       class="btn btn-secondary btn-sm"><i class="bi bi-telegram sidebar-menu-icon--left"> </i> Telegram</a></small>
+                                                        </p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p class="d-flex align-items-center mb-1">
+                                                            <small class="flex lh-24pt">Contract</small>
+                                                            <small class="lh-24pt"><a  href="#" data-hex="0xe243ccab9e66e6cf1215376980811ddf1eb7f689"
+                                                       class="btn btn-secondary btn-sm copy-btn"><img width="15px" src="https://assets.coingecko.com/asset_platforms/images/46/small/cronos.jpeg?1636714736" class="bi bi-github sidebar-menu-icon--left"> 0xe24....7f689 <i class="bi bi-clipboard sidebar-menu-icon--right"></i></a></small>
+                                                        </p>
+                                                    </div>
+
+                                                     <div>
+                                                        <p class="d-flex align-items-center mb-1">
+                                                            <small class="flex lh-24pt">Whitepaper</small>
+                                                            <small class="lh-24pt"><a target="_blank" href="https://crodex.app/crodex_whitepaper.pdf"
+                                                       class="btn btn-secondary btn-sm"><i class="bi bi-journal-text sidebar-menu-icon--left"> </i> Whitepaper</a></small>
+                                                        </p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p class="d-flex align-items-center mb-1">
+                                                            <small class="flex lh-24pt">Documentation</small>
+                                                            <small class="lh-24pt"><a target="_blank" href="https://docs.crodex.app/"
+                                                       class="btn btn-secondary btn-sm"><i class="bi bi-book sidebar-menu-icon--left"> </i> Documentation</a></small>
+                                                        </p>
+                                                    </div>
+
+                                                    
+
+                                                     <div>
+                                                        <p class="d-flex align-items-center mb-0">
+                                                            <small class="flex lh-24pt">Tags</small>
+                                                            <small class="lh-24pt"><a target="_blank" href=""
+                                                       class="btn btn-secondary btn-sm"><i class="bi bi-tag sidebar-menu-icon--left"> </i> Ceronos Ecosystem</a></small>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                {% endfor %}
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="page-separator">
+                                    <div class="page-separator__text">Chart</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="card mb-md-0">
+                                            
+                                            <div class="card-body">
+                                                <div class="text-50 mb-16pt">
+                                                	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+										<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+										<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+										<script src="https://code.highcharts.com/stock/modules/hollowcandlestick.js"></script>
+										<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.2/css/themes/dark-unica.min.css">
+										<p id="container" style="height: 400px; z-index: 0;"></p>
+
+
+										<script type="text/javascript">
+										Highcharts.getJSON('https://api.coingecko.com/api/v3/coins/crodex/ohlc?vs_currency=usd&days=1', function (data) {
+    										Highcharts.stockChart('container', {
+        										rangeSelector: {
+            									selected: 1
+        										},
+        										navigator: {
+            									series: {
+                								color: Highcharts.getOptions().colors[0]
+                
+            										}
+        										},
+        										chart: {
+        										backgroundColor: {
+            										linearGradient: [0, 0, 500, 500],
+            										stops: [
+                										[0, 'rgb(255, 255, 255)'],
+                										[1, 'rgb(240, 240, 255)']
+            										]
+        										},
+    										},
+        										series: [{
+            										type: 'hollowcandlestick',
+            										name: 'Crodex/USDT',
+            										data: data
+        										}]
+    										});
+										});
+									</script>
+									<script src="/js/themes/gray.js"></script>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    
+                            
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                {% endblock %}
