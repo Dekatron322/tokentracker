@@ -300,6 +300,12 @@
                                                    data-sort="js-lists-values-employer-name">Price</a>
                                             </th>
 
+                                            <th style="width: 150px;">
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-employer-name">24hr %</a>
+                                            </th>
+
                                             <th class="text-center"
                                                 style="width: 48px;">
                                                 <a href="javascript:void(0)"
@@ -355,7 +361,7 @@
                                                     <div class="media-body">
 
                                                         <div class="d-flex flex-column">
-                                                            <p class="mb-0"><strong class="js-lists-values-employee-name">{{ rs.name }} ({{ rs.symbol}})</strong></p>
+                                                            <p class="mb-0"><strong class="js-lists-values-employee-name">{{ rs.name }} ({{ rs.symbol}}) </strong></p>
                                                             <small class="js-lists-values-employee-email text-50"></small>
                                                         </div>
 
@@ -370,6 +376,14 @@
                                                     
                                                     <a href=""
                                                        class="text-70"><span class="js-lists-values-employer-name">${{ rs.current_price }}</span></a>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    
+                                                    <a href=""
+                                                       class="text-70">{% if rs.price_change_percentage_24h > 0 %}<span style="color:green" class="js-lists-values-employer-name"> {{ rs.price_change_percentage_24h }}% </span>{% else %} <span style="color:red" class="js-lists-values-employer-name"> {{ rs.price_change_percentage_24h }}% </span>{% endif %}</a>
                                                 </div>
                                             </td>
 

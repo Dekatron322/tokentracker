@@ -1,0 +1,244 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<style type="text/css">
+                    .liquidity {
+    background:linear-gradient(0deg, rgba(33, 36, 41, 0.8), rgba(33, 36, 41, 0.8)), url(https://hdwallpaperim.com/wp-content/uploads/2017/08/23/458540-architecture-glowing-futuristic-748x421.jpg); background-size:cover; background-position: center;
+    border-radius: 15px; 
+    border: none;
+}
+
+.liquidity2 {
+    background:linear-gradient(0deg, rgba(33, 36, 41, 0.8), rgba(33, 36, 41, 0.8)), url(https://img.freepik.com/free-vector/futuristic-background-concept_23-2148473541.jpg); background-size:cover; background-position: center;
+    border-radius: 15px; 
+    border: none;
+}
+.liquidity3 {
+    background:linear-gradient(0deg, rgba(33, 36, 41, 0.8), rgba(33, 36, 41, 0.8)), url(https://img.freepik.com/free-vector/gradient-technology-futuristic-background_23-2149131653.jpg); background-size:cover; background-position: center;
+    border-radius: 15px; 
+    border: none;
+}
+
+</style>
+
+
+                <div class="container-fluid page__container">
+                    <div class="page-section">
+
+                        <div class="page-separator">
+                            <div class="page-separator__text">Overview</div>
+                        </div>
+
+                        <div class="row card-group-row mb-lg-8pt">
+                        <div class="col-lg-4 col-md-6 card-group-row__col">
+                            <div class="card card-group-row__card liquidity">
+                                <div class="card-body d-flex flex-row align-items-center">
+                                    <div class="flex">
+                                        <p class="d-flex align-items-center mb-0">
+                                            <strong style="color: #ffffff !important;">Wallet balance</strong>
+                                            <span class="text-50 ml-8pt" style="color: #ffffff !important;">20%</span>
+                                            <i class="material-icons text-accent ml-4pt icon-16pt" style="color: #ffffff !important;">keyboard_arrow_up</i>
+                                        </p>
+                                        <span class="h2 m-0" style="color: #ffffff !important;">
+                                            &dollar;24,000 <small class="text-muted" style="color: #ffffff !important;"> / &dollar;50,000</small>
+                                        </span>
+                                    </div>
+                                    <i class="material-icons icon-32pt text-20 ml-8pt" style="color: #ffffff !important;">monetization_on</i>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="page-separator">
+                            <div class="page-separator__text">Projects</div>
+                        </div>
+
+                        <div class="card dashboard-area-tabs mb-32pt liquidity2">
+                            
+
+                            <div class="table-responsive"
+                                 data-toggle="lists"
+                                 data-lists-sort-by="js-lists-values-date"
+                                 data-lists-sort-desc="true"
+                                 data-lists-values='["js-lists-values-lead", "js-lists-values-project", "js-lists-values-status", "js-lists-values-budget", "js-lists-values-date"]'>
+
+                                <table class="table mb-0 thead-border-top-0 table-nowrap">
+                                    <thead>
+                                        <tr>
+
+                                            <th 
+                                                class="pr-0">
+                                                <div class="custom-control custom-checkbox" style="color: #ffffff !important;">
+                                                    S/N
+                                                </div>
+                                            </th>
+
+                                            <th >
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-project" style="color: #ffffff !important;">Token</a>
+                                            </th>
+
+                                            <th>
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-lead" style="color: #ffffff !important;">Balance</a>
+                                            </th>
+
+                                            
+
+                                            <th >
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-status" style="color: #ffffff !important;">Price</a>
+                                            </th>
+
+                                            <th>
+                                                <a href="javascript:void(0)"
+                                                   class="sort"
+                                                   data-sort="js-lists-values-budget" style="color: #ffffff !important;">Value</a>
+                                            </th>
+
+                                            
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list"
+                                           id="projects">
+
+                                        <tr>
+
+                                            <td class="pr-0">
+                                                <div class="custom-control custom-checkbox" style="color: #ffffff !important;">
+                                                    1
+                                                </div>
+                                            </td>
+
+                                            <td>
+
+                                                <div class="media flex-nowrap align-items-center"
+                                                     style="white-space: nowrap;">
+                                                    <div class="avatar avatar-sm mr-8pt">
+                                                        <span class="avatar-title rounded-circle"><img width="35px" src="https://app.cronetworks.com/static/assets/images/logo/cronetworks.png"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="d-flex flex-column">
+                                                            <small class="js-lists-values-project"><strong style="color: #ffffff !important;">Cronetworks(CRNT)</strong></small>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+
+                                            <td>
+
+                                                <div class="media flex-nowrap align-items-center"
+                                                     style="white-space: nowrap;">
+                                                    
+                                                    <div class="media-body">
+
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex d-flex flex-column">
+                                                                <p class="mb-0"><strong class="js-lists-values-lead" style="color: #ffffff !important;">300,000</strong></p>
+                                                                
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex flex-column">
+                                                    <small class="js-lists-values-status text-50 mb-4pt" style="color: #ffffff !important;">$0.0063</small>
+                                                    
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex flex-column">
+                                                    <small class="js-lists-values-budget" style="color: #ffffff !important;"><strong>$3456.00</strong></small>
+                                                    
+                                                </div>
+                                            </td>
+
+                                           
+                                        </tr>
+
+                                        <tr>
+
+                                            <td class="pr-0">
+                                                <div class="custom-control custom-checkbox" style="color: #ffffff !important;">
+                                                    2
+                                                </div>
+                                            </td>
+
+                                            <td>
+
+                                                <div class="media flex-nowrap align-items-center"
+                                                     style="white-space: nowrap;">
+                                                    <div class="avatar avatar-sm mr-8pt">
+                                                        <span class="avatar-title rounded-circle" style="overflow: hidden;"><img  width="55px" src="https://assets.coingecko.com/coins/images/7310/large/oCw2s3GI_400x400.jpeg?1645172042"></span>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <div class="d-flex flex-column">
+                                                            <small class="js-lists-values-project"><strong style="color: #ffffff !important;">Cronos(CRO)</strong></small>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </td>
+
+                                            <td>
+
+                                                <div class="media flex-nowrap align-items-center"
+                                                     style="white-space: nowrap;">
+                                                    
+                                                    <div class="media-body">
+
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex d-flex flex-column">
+                                                                <p class="mb-0"><strong class="js-lists-values-lead" style="color: #ffffff !important;">300,000</strong></p>
+                                                                
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex flex-column">
+                                                    <small class="js-lists-values-status text-50 mb-4pt" style="color: #ffffff !important;">$0.0412</small>
+                                                    
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex flex-column">
+                                                    <small class="js-lists-values-budget"><strong style="color: #ffffff !important;">$3456.00</strong></small>
+                                                    
+                                                </div>
+                                            </td>
+
+                                           
+                                        </tr>
+
+                                        
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}
